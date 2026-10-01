@@ -2,7 +2,11 @@ export default class Point {
   private _x = 0;
   private _y = 0;
 
-  constructor(x?: number, y?: number, private readonly onchange?: Function) {
+  constructor(
+    x?: number,
+    y?: number,
+    private readonly onchange?: Function,
+  ) {
     if (x) this._x = x;
     if (y) this._y = y;
   }

@@ -31,8 +31,12 @@ describe("getItems", () => {
 
     expect(items.length).toBe(16);
 
-    const client2 = items.find(x => x.type === "text" && x.text === "Client2");
-    const footer2 = items.find(x => x.type === "text" && x.text === "Footer 2");
+    const client2 = items.find(
+      (x) => x.type === "text" && x.text === "Client2",
+    );
+    const footer2 = items.find(
+      (x) => x.type === "text" && x.text === "Footer 2",
+    );
 
     expect(client2).toEqual({
       type: "text",
@@ -70,27 +74,79 @@ function getLayout(): ILayout {
       height: 50,
       binding: "",
       items: [
-        { type: "text", x: 0, y: 0, width: 20, height: 10, name: "", text: "Header1", binding: "title" },
-        { type: "text", x: 20, y: 20, width: 40, height: 10, name: "", text: "Header2" },
+        {
+          type: "text",
+          x: 0,
+          y: 0,
+          width: 20,
+          height: 10,
+          name: "",
+          text: "Header1",
+          binding: "title",
+        },
+        {
+          type: "text",
+          x: 20,
+          y: 20,
+          width: 40,
+          height: 10,
+          name: "",
+          text: "Header2",
+        },
       ],
     },
     contentSection: {
       height: 100,
       binding: "invoices",
       items: [
-        { type: "text", x: 25, y: 25, width: 20, height: 10, name: "", text: "", binding: "ficheNo" },
-        { type: "text", x: 25, y: 50, width: 80, height: 10, name: "", text: "", binding: "client" },
+        {
+          type: "text",
+          x: 25,
+          y: 25,
+          width: 20,
+          height: 10,
+          name: "",
+          text: "",
+          binding: "ficheNo",
+        },
+        {
+          type: "text",
+          x: 25,
+          y: 50,
+          width: 80,
+          height: 10,
+          name: "",
+          text: "",
+          binding: "client",
+        },
       ],
       sections: [
         {
           height: 100,
           binding: "lines",
           items: [
-            { type: "text", x: 25, y: 25, width: 20, height: 10, name: "", text: "", binding: "stock" },
-            { type: "text", x: 25, y: 50, width: 80, height: 10, name: "", text: "", binding: "description" },
+            {
+              type: "text",
+              x: 25,
+              y: 25,
+              width: 20,
+              height: 10,
+              name: "",
+              text: "",
+              binding: "stock",
+            },
+            {
+              type: "text",
+              x: 25,
+              y: 50,
+              width: 80,
+              height: 10,
+              name: "",
+              text: "",
+              binding: "description",
+            },
           ],
-          sections: [
-          ],
+          sections: [],
         },
       ],
     },
@@ -98,8 +154,24 @@ function getLayout(): ILayout {
       height: 60,
       binding: "",
       items: [
-        { type: "text", x: 0, y: 0, width: 20, height: 10, name: "", text: "Footer 1" },
-        { type: "text", x: 20, y: 20, width: 40, height: 10, name: "", text: "Footer 2" },
+        {
+          type: "text",
+          x: 0,
+          y: 0,
+          width: 20,
+          height: 10,
+          name: "",
+          text: "Footer 1",
+        },
+        {
+          type: "text",
+          x: 20,
+          y: 20,
+          width: 40,
+          height: 10,
+          name: "",
+          text: "Footer 2",
+        },
       ],
     },
   };

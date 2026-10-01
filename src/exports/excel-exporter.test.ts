@@ -3,20 +3,20 @@ import { getExcelMeta } from "./excel-exporter";
 describe("Export To Excel", () => {
   test("excel exporter tests", () => {
     const items = [
-      { text: 'Cell 1', x: 10, y: 10, width: 50, height: 30 },
-      { text: 'Cell 2', x: 15, y: 15, width: 50, height: 30 },
-      { text: 'Cell 3', x: 25, y: 25, width: 50, height: 30 },
-      { text: 'Cell 4', x: 10, y: 60, width: 10, height: 10 },
+      { text: "Cell 1", x: 10, y: 10, width: 50, height: 30 },
+      { text: "Cell 2", x: 15, y: 15, width: 50, height: 30 },
+      { text: "Cell 3", x: 25, y: 25, width: 50, height: 30 },
+      { text: "Cell 4", x: 10, y: 60, width: 10, height: 10 },
     ];
 
     const columns = [
-      { key: 'A', breakpoint: 0, width: 10 },
-      { key: 'B', breakpoint: 10, width: 5 },
-      { key: 'C', breakpoint: 15, width: 5 },
-      { key: 'D', breakpoint: 20, width: 5 },
-      { key: 'E', breakpoint: 25, width: 35 },
-      { key: 'F', breakpoint: 60, width: 5 },
-      { key: 'G', breakpoint: 65, width: 10 },
+      { key: "A", breakpoint: 0, width: 10 },
+      { key: "B", breakpoint: 10, width: 5 },
+      { key: "C", breakpoint: 15, width: 5 },
+      { key: "D", breakpoint: 20, width: 5 },
+      { key: "E", breakpoint: 25, width: 35 },
+      { key: "F", breakpoint: 60, width: 5 },
+      { key: "G", breakpoint: 65, width: 10 },
     ];
 
     const rows = [

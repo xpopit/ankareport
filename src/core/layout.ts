@@ -43,7 +43,10 @@ export interface IBarcodeReportItem extends IBaseReportItem {
   barWidth: 1 | 2 | 3 | 4;
 }
 
-export type IReportItem = ITextReportItem | IImageReportItem | IBarcodeReportItem;
+export type IReportItem =
+  | ITextReportItem
+  | IImageReportItem
+  | IBarcodeReportItem;
 
 export interface IStyle {
   color?: string;

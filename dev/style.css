@@ -43,7 +43,8 @@ body {
   flex: 1;
 }
 
-.content > #designer, .content > #report {
+.content > #designer,
+.content > #report {
   background-color: white;
   border: 1px solid #cccccc;
 }

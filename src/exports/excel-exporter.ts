@@ -9,7 +9,10 @@ export function exportToXlsx(layout: ILayout, data: any) {
   const workbook = new Workbook();
   const worksheet = workbook.addWorksheet("Wroksheet1");
 
-  worksheet.columns = excelMeta.columns.map(x => ({ key: x.key, width: x.width * 0.3 }));
+  worksheet.columns = excelMeta.columns.map((x) => ({
+    key: x.key,
+    width: x.width * 0.3,
+  }));
 
   items.forEach((item) => {
     if (item.type === "text") {
@@ -18,7 +21,7 @@ export function exportToXlsx(layout: ILayout, data: any) {
     }
   });
 
-  excelMeta.rows.forEach(x => worksheet.getRow(x.key).height = x.height);
+  excelMeta.rows.forEach((x) => (worksheet.getRow(x.key).height = x.height));
 
   return workbook;
 }
@@ -34,7 +37,8 @@ export function getExcelMeta(items: IReportItem[]) {
     const height = Math.round(item.height);
 
     if (!column_breakpoints.includes(x)) column_breakpoints.push(x);
-    if (!column_breakpoints.includes(x + width)) column_breakpoints.push(x + width);
+    if (!column_breakpoints.includes(x + width))
+      column_breakpoints.push(x + width);
 
     if (!row_breakpoints.includes(y)) row_breakpoints.push(y);
     if (!row_breakpoints.includes(y + height)) row_breakpoints.push(y + height);
@@ -43,8 +47,8 @@ export function getExcelMeta(items: IReportItem[]) {
   column_breakpoints.sort((a, b) => a - b);
   row_breakpoints.sort((a, b) => a - b);
 
-  const columns: { key: string, breakpoint: number, width: number }[] = [];
-  const rows: { key: number, breakpoint: number, height: number }[] = [];
+  const columns: { key: string; breakpoint: number; width: number }[] = [];
+  const rows: { key: number; breakpoint: number; height: number }[] = [];
 
   for (let i = 0; i < column_breakpoints.length - 1; i++) {
     columns.push({
@@ -63,20 +67,20 @@ export function getExcelMeta(items: IReportItem[]) {
   }
 
   const getCellName = (x: number, y: number) => {
-    const cellName = columns.find(c => c.breakpoint === x)!.key; // TODO: add null check
-    const rowName = rows.find(r => r.breakpoint === y)!.key; // TODO: add null check
+    const cellName = columns.find((c) => c.breakpoint === x)!.key; // TODO: add null check
+    const rowName = rows.find((r) => r.breakpoint === y)!.key; // TODO: add null check
 
     return `${cellName}${rowName}`;
-  }
+  };
 
   // TODO: Fix name
   const getBeforeCellName = (cell: number, row: number) => {
-    const cellIndex = column_breakpoints.findIndex(x => x === cell);
+    const cellIndex = column_breakpoints.findIndex((x) => x === cell);
     const cellName = String.fromCharCode(65 + cellIndex);
-    const rowIndex = row_breakpoints.findIndex(x => x === row) + 1;
+    const rowIndex = row_breakpoints.findIndex((x) => x === row) + 1;
 
     return `${cellName}${rowIndex}`;
-  }
+  };
 
   return { columns, rows, getCellName, getBeforeCellName };
 }

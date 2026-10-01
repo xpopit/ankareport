@@ -10,8 +10,7 @@ export interface ImageSelectorEventsMap {
   change: ChangeEventArgs;
 }
 
-export interface ImageSelectorOptions {
-}
+export interface ImageSelectorOptions {}
 
 export default class ImageSelector implements PropertyEditor {
   public readonly element = document.createElement("div");
@@ -30,7 +29,10 @@ export default class ImageSelector implements PropertyEditor {
     this.element.appendChild(this.elementButton);
 
     this.elementFileSelector.accept = "image/*";
-    this.elementFileSelector.addEventListener("change", this._onFileInputChange);
+    this.elementFileSelector.addEventListener(
+      "change",
+      this._onFileInputChange,
+    );
 
     this.elementButton.innerHTML = "...";
 
@@ -66,7 +68,10 @@ export default class ImageSelector implements PropertyEditor {
   }
 
   _onFileInputChange() {
-    if (this.elementFileSelector.files && this.elementFileSelector.files.length > 0) {
+    if (
+      this.elementFileSelector.files &&
+      this.elementFileSelector.files.length > 0
+    ) {
       const file = this.elementFileSelector.files[0];
 
       const reader = new FileReader();

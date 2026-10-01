@@ -35,7 +35,9 @@ export default class Renderer {
     this.options.element.appendChild(this.headerSection.element);
 
     const contentProperty = this.options.layout.contentSection.binding;
-    const contentData = contentProperty ? this.options.data[contentProperty] : null;
+    const contentData = contentProperty
+      ? this.options.data[contentProperty]
+      : null;
 
     if (Array.isArray(contentData)) {
       contentData.forEach((data: any) => {
@@ -57,7 +59,9 @@ export default class Renderer {
 
     const data = await workbook.xlsx.writeBuffer();
 
-    const blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8' });
+    const blob = new Blob([data], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8",
+    });
 
     saveAs(blob, filename);
   }
