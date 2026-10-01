@@ -48,10 +48,28 @@ export default class BarcodeReportItemProperties extends BaseReportItemPropertie
 
   getPropertyDefinitions(): Property[] {
     return [
-      { field: "value", label: this.translations?.value ?? "Value", type: "string" },
-      { field: "binding", label: this.translations?.binding ?? "Binding", type: "string" },
-      { field: "format", label: this.translations?.format ?? "Format", type: "string", editor: createFormatEditor() },
-      { field: "barWidth", label: this.translations?.barWidth ?? "Bar Width", type: "number", editor: createBarWidthEditor() },
+      {
+        field: "value",
+        label: this.translations?.value ?? "Value",
+        type: "string",
+      },
+      {
+        field: "binding",
+        label: this.translations?.binding ?? "Binding",
+        type: "string",
+      },
+      {
+        field: "format",
+        label: this.translations?.format ?? "Format",
+        type: "string",
+        editor: createFormatEditor(),
+      },
+      {
+        field: "barWidth",
+        label: this.translations?.barWidth ?? "Bar Width",
+        type: "number",
+        editor: createBarWidthEditor(),
+      },
       ...super.getPropertyDefinitions(),
     ];
   }

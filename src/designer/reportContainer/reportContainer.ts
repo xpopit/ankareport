@@ -22,7 +22,10 @@ export default class ReportContainer {
     new EventEmitter<ReportChangeEventArgs>();
 
   constructor(options: ReportContainerOptions) {
-    this.report = new Report({ designer: options.designer, translations: options.translations });
+    this.report = new Report({
+      designer: options.designer,
+      translations: options.translations,
+    });
 
     this._init();
   }

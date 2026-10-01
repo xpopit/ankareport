@@ -91,7 +91,8 @@ export default class PropertyGrid {
         const intValue = parseInt(args.value);
 
         if (isNaN(intValue)) {
-          if (property.editor) { // TODO: should always exists
+          if (property.editor) {
+            // TODO: should always exists
             property.editor.value = (this._dataSource as any)[property.field];
           }
         } else {

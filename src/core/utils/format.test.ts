@@ -11,8 +11,14 @@ describe("format", () => {
   });
 
   test("format date", () => {
-    expect(formatDate("2025-12-19T14:43:00.000", "YYYY.MM.DD")).toBe("2025.12.19");
-    expect(formatDate("2025-12-19T14:43:00.000", "YYYY.MM.DD HH")).toBe("2025.12.19 14");
-    expect(formatDate("2025-12-19T14:43:00.000", "YYYY.MM.DD HH:mm")).toBe("2025.12.19 14:43");
+    expect(formatDate("2025-12-19T14:43:00.000", "YYYY.MM.DD")).toBe(
+      "2025.12.19",
+    );
+    expect(formatDate("2025-12-19T14:43:00.000", "YYYY.MM.DD HH")).toBe(
+      "2025.12.19 14",
+    );
+    expect(formatDate("2025-12-19T14:43:00.000", "YYYY.MM.DD HH:mm")).toBe(
+      "2025.12.19 14:43",
+    );
   });
 });

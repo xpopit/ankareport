@@ -32,11 +32,16 @@ export default class BarcodeReportItem extends BaseReportItem {
 
     if (this.elementSvg) this.elementSvg.remove();
 
-    this.elementSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    this.elementSvg = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg",
+    );
 
     this.element.appendChild(this.elementSvg);
 
-    const barcode = this.properties.value || (this.properties.binding ? `[${this.properties.binding}]` : "1234567890");
+    const barcode =
+      this.properties.value ||
+      (this.properties.binding ? `[${this.properties.binding}]` : "1234567890");
 
     JsBarcode(this.elementSvg, barcode, {
       width: this.properties.barWidth,

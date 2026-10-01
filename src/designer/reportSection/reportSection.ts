@@ -1,7 +1,12 @@
 import ContextMenu from "../../components/contextMenu/contextMenu";
 import { MenuButton } from "../../components/menu/menu";
 import EventEmitter, { EventCallback } from "../../core/eventEmitter";
-import { IBarcodeReportItem, ISection, ITextReportItem, IImageReportItem } from "../../core/layout";
+import {
+  IBarcodeReportItem,
+  ISection,
+  ITextReportItem,
+  IImageReportItem,
+} from "../../core/layout";
 import {
   BarcodeReportItem,
   ImageReportItem,

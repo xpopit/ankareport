@@ -38,9 +38,21 @@ export default class TextReportItemProperties extends BaseReportItemProperties {
 
   getPropertyDefinitions(): Property[] {
     return [
-      { field: "text", label: this.translations?.text ?? "Text", type: "string" },
-      { field: "binding", label: this.translations?.binding ?? "Binding", type: "string" },
-      { field: "format", label: this.translations?.format ?? "Format", type: "string" },
+      {
+        field: "text",
+        label: this.translations?.text ?? "Text",
+        type: "string",
+      },
+      {
+        field: "binding",
+        label: this.translations?.binding ?? "Binding",
+        type: "string",
+      },
+      {
+        field: "format",
+        label: this.translations?.format ?? "Format",
+        type: "string",
+      },
       ...super.getPropertyDefinitions(),
     ];
   }

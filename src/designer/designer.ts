@@ -14,7 +14,10 @@ import ToolbarTopMenu from "./toolbar/toolbarTopMenu";
 
 import "./designer.css";
 import { ChangeStack } from "./change-stack";
-import { defaultTranslations, ITranslations } from "../core/translations/translations-contract";
+import {
+  defaultTranslations,
+  ITranslations,
+} from "../core/translations/translations-contract";
 
 export interface DataSourceChangeEventArgs {
   dataSource: DataSourceTreeItemData[];
@@ -53,7 +56,10 @@ export default class Designer {
 
   constructor(options: DesignerOptions) {
     const { element } = options;
-    const effectiveTranslations: ITranslations = { ...defaultTranslations, ...options.translations };
+    const effectiveTranslations: ITranslations = {
+      ...defaultTranslations,
+      ...options.translations,
+    };
 
     this.menu = new ToolbarTopMenu(effectiveTranslations);
     this.toolbar = new ToolbarLeftMenu(effectiveTranslations);

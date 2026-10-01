@@ -27,7 +27,9 @@ export default class TextReportItem extends BaseReportItem {
   refresh() {
     super.refresh();
 
-    const text = this.properties.text || (this.properties.binding ? `[${this.properties.binding}]` : "NULL");
+    const text =
+      this.properties.text ||
+      (this.properties.binding ? `[${this.properties.binding}]` : "NULL");
 
     this.element.innerText = text;
   }

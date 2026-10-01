@@ -23,7 +23,11 @@ export default class ReportProperties extends StyleProperties {
 
   getPropertyDefinitions(): Property[] {
     return [
-      { field: "width", label: this.translations?.width ?? "Width", type: "number" },
+      {
+        field: "width",
+        label: this.translations?.width ?? "Width",
+        type: "number",
+      },
       ...super.getPropertyDefinitions(),
     ];
   }

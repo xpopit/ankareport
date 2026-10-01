@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -93,7 +93,9 @@
       const dataSourcePanel = document.getElementById("data-source-panel");
       const dataPanel = document.getElementById("data-panel");
       const exportToPdfButton = document.getElementById("export-to-pdf-button");
-      const exportToXlsxButton = document.getElementById("export-to-xlsx-button");
+      const exportToXlsxButton = document.getElementById(
+        "export-to-xlsx-button",
+      );
 
       const layoutEditor = ace.edit("layout-editor");
       layoutEditor.session.setMode("ace/mode/json");
