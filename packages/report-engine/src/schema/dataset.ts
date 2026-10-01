@@ -1,6 +1,6 @@
 export interface DatasetColumn {
   name: string;
-  type: 'string' | 'number' | 'date' | 'boolean';
+  type: "string" | "number" | "date" | "boolean";
   label?: string;
 }
 

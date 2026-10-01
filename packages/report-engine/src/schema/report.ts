@@ -1,6 +1,6 @@
 export interface ReportDefinition {
   schemaVersion: number;
-  type: 'DASHBOARD' | 'PIXEL_REPORT' | 'DETAIL_REPORT' | 'HYBRID';
+  type: "DASHBOARD" | "PIXEL_REPORT" | "DETAIL_REPORT" | "HYBRID";
   pages: ReportPage[];
   filters: Filter[];
   settings: Record<string, any>;
@@ -9,7 +9,7 @@ export interface ReportDefinition {
 export interface ReportPage {
   id: string;
   name: string;
-  mode: 'dashboard' | 'pixel';
+  mode: "dashboard" | "pixel";
   widgets?: Widget[];
   ankareport?: Record<string, any>;
 }
